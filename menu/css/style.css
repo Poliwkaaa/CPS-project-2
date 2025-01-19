@@ -92,7 +92,7 @@ body {
   overflow-y: auto;
 }
 
-.menu__inner {
+.menu--fixed {
   position: fixed;
 }
 
@@ -101,7 +101,7 @@ body {
   margin-bottom: 45px;
 }
 
-.menu__button {
+.button {
   width: 40px;
   height: 40px;
   padding: 12px 11px;
@@ -109,21 +109,23 @@ body {
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
-  margin-top: 8px;
   transition: filter 1s;
 }
 
-.menu__button:hover {
+.button:hover {
   filter: contrast(200%) drop-shadow(0 0 5px #1b1c21);
 }
 
-.menu__button.close {
-  background-image: url(../images/close.svg);
-  margin-right: 16px;
-  opacity: 1;
+.menu__button {
+  margin-top: 8px;
 }
 
-.menu__button.search {
+.button--close {
+  background-image: url(../images/close.svg);
+  margin-right: 16px;
+}
+
+.button--search {
   background-image: url(../images/search.svg);
   margin-left: 80px;
 }
@@ -132,12 +134,12 @@ body {
   margin-left: -24px;
 }
 
-.menu__item.active .menu__link {
+.menu__link--active {
   color: #7e7e82;
   position: relative;
 }
 
-.menu__item.active .menu__link::before {
+.menu__link--active::before {
   content: "";
   position: absolute;
   left: 0;
@@ -162,15 +164,15 @@ body {
   margin-bottom: 16px;
 }
 
-.menu__button.call {
+.button--call {
   background-image: url(../images/call.svg);
 }
 
-.menu__button.chat {
+.button--chat {
   background-image: url(../images/chat.svg);
 }
 
-.menu__button.profile {
+.button--profile {
   background-image: url(../images/profile.svg);
 }
 
@@ -195,11 +197,11 @@ body {
   display: flex;
 }
 
-.lang__btn{
+.lang__btn {
   text-transform: uppercase;
   margin-right: 7px;
 }
 
-.lang__btn.active {
+.lang__btn--active {
   color: #7e7e82;
 }

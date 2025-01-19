@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<section class="menu menu__inner">
+<section class="menu menu--fixed">
   <div class="menu__top">
   <div class="menu__header">
-    <button class="menu__button close" type="button" aria-label="Закрыть меню">
+    <button class="button button--close menu__button" type="button" aria-label="Закрыть меню">
     </button>
 
     <a class="logo" href="#body">
@@ -24,13 +24,13 @@
       />
     </a>
 
-    <button class="menu__button search" type="button" aria-label="Открыть поиск">
+    <button class="button button--search menu__button" type="button" aria-label="Открыть поиск">
     </button>
   </div>
 
   <ul class="menu__list">
-    <li class="menu__item active">
-      <a class="menu__link " href="#">
+    <li class="menu__item">
+      <a class="menu__link menu__link--active" href="#">
         Ремонт техники
       </a>
     </li>
@@ -75,17 +75,17 @@
 <div class="menu__bottom">
   <div class="menu__contacts">
     <button
-      class="menu__button call"
+      class="button button--call"
       type="button"
       aria-label="Заказать звонок"
     ></button>
     <button
-      class="menu__button chat"
+      class="button button--chat"
       type="button"
       aria-label="Оставить обратную связь"
     ></button>
     <button
-      class="menu__button profile"
+      class="button button--profile"
       type="button"
       aria-label="Перейти в профиль"
     ></button>
@@ -96,11 +96,11 @@
 
   <ul class="lang">
     <li class="lang__item">
-      <button class="lang__btn active" type="button">
+      <button class="lang__btn lang__btn--active" type="button">
         ru
       </button>
     </li>
-    <li class="lang__item active">
+    <li class="lang__item">
       <button class="lang__btn" type="button">
         en
       </button>
