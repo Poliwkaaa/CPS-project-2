@@ -108,7 +108,7 @@ body {
 .brands__swiper::after {
   content: "";
   position: absolute;
-  right: 0;
+  right: 4%;
   top: 0;
   z-index: 10;
   background: linear-gradient(270deg, #f8f8f8 0.04%, rgba(248, 248, 248, 0) 100%);
@@ -173,7 +173,8 @@ body {
   }
 
   .container {
-    width: 768px;
+    min-width: 768px;
+    max-width: 1000px;
     padding: 0 24px;
     margin: 0 auto;
   }
@@ -189,8 +190,13 @@ body {
     gap: 15px 24px;
   }
 
+  .brands__item {
+    width: calc(33.333% - 16px);
+    max-width: 300px;
+  }
+
   .brands__content {
-    width: 224px;
+    width: 100%;
   }
 
   .brands__swiper::after {
@@ -202,20 +208,28 @@ body {
   }
 
   .show-more-btn {
+    position: relative;
     font-weight: 500;
     display: block;
-    padding-left: 24px;
-    background: url('../images/show-more-icon.svg') no-repeat 0 50%;
+    padding-left: 33px;
   }
 
-  .show-more-btn--hide {
-    background: url('../images/hide-icon.svg') no-repeat 0 50%;
+  .show-more-btn::before {
+    content: url('../images/show-more-icon.svg');
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
   }
+
+  .show-more-btn--hide::before {
+    transform: rotate(180deg);
+  } 
 }
 
 @media (min-width: 1120px) {
   .container {
-    width: 1184px;
+    min-width: 1184px;
     padding: 0 32px;
   }
 
@@ -223,7 +237,7 @@ body {
     gap: 15px 32px;
   }
 
-  .brands__content {
+  .brands__item {
     width: 240px;
   }
 }

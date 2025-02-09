@@ -1,9 +1,9 @@
 const width = document.body.clientWidth;
-let swiperSlider = document.querySelector(".swiper");
-let wrapper = swiperSlider.querySelector(".swiper-wrapper");
-let slides = swiperSlider.querySelectorAll(".swiper-slide");
+const swiperSlider = document.querySelector(".swiper");
+const wrapper = swiperSlider.querySelector(".swiper-wrapper");
+const slides = swiperSlider.querySelectorAll(".swiper-slide");
 
-let deleteSwiper = function () {
+const deleteSwiper = function () {
   for (let i = 0; i < slides.length; i++) {
     slides[i].classList.remove("swiper-slide");
   }
@@ -39,26 +39,25 @@ if (width >= 1120) {
 
 // Cкрываем карточки, которые не должны быть видны по умолчанию
 for (let i = 0; i < cards.length; i++) {
-  if (i >= visibleCardsCount - 1) {
+  if (i >= visibleCardsCount) {
     cards[i].classList.add("brands__item--hidden");
   }
 }
 
 toggleButton.addEventListener("click", function () {
-  if (toggleButton.textContent === "Показать все") {
+  if (toggleButton.classList.contains('show-more-btn--show')) {
     for (let i = 0; i < cards.length; i++) {
       cards[i].classList.remove("brands__item--hidden");
     }
     toggleButton.textContent = "Скрыть";
-    toggleButton.classList.add("show-more-btn--hide");
+    toggleButton.classList.replace('show-more-btn--show' , 'show-more-btn--hide');
   } else {
     for (let i = 0; i < cards.length; i++) {
-      if (i >= visibleCardsCount - 1) {
+      if (i >= visibleCardsCount) {
         cards[i].classList.add("brands__item--hidden");
       }
     }
     toggleButton.textContent = "Показать все";
-    toggleButton.classList.remove("show-more-btn--hide");
+    toggleButton.classList.replace('show-more-btn--hide' , 'show-more-btn--show');
   }
-  console.log("Click");
 });
